@@ -53,8 +53,25 @@ Common commands are in `backend/justfile` (`just dev`, `just test`, `just lint`,
 
 ## Frontend mockup
 
-`frontend/mockup/` is a dependency-free, no-build mockup: open `frontend/mockup/index.html` directly
-in a browser. All data is fake and generic; there are no calls to a real backend.
+`frontend/mockup/` is a dependency-free, no-build mockup. All data is fake and generic; there are no
+calls to a real backend.
+
+### How to open it
+
+**Online, via raw.githack** (nothing to install):
+
+<https://raw.githack.com/GennariAl/rag-agent/main/frontend/mockup/index.html>
+
+GitHub serves repository files as plain text, so opening `index.html` (or its *Raw* view) from
+github.com only shows the source code. [raw.githack](https://raw.githack.com) serves the same files
+with the correct content type, so the page runs and its CSS/JS are loaded. Notes:
+
+- the URL parameters below work here too, e.g. `…/index.html?role=admin`;
+- raw.githack caches files, so a freshly pushed change may take a few minutes to show up;
+- it only works while the repository is public.
+
+**Locally**: clone the repository and open `frontend/mockup/index.html` with a double click.
+No web server is needed.
 
 What it shows:
 
