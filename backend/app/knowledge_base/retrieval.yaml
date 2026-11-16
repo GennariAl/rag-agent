@@ -1,0 +1,6 @@
+# Default hybrid-search parameters, applied by KnowledgeBaseRepository.hybrid_search
+# when the SearchQuery does not specify them.
+# top_k: final number of chunks kept after RRF fusion.
+# candidates: chunks fetched per branch (vector + full-text) before fusion.
+top_k: 20
+candidates: 40

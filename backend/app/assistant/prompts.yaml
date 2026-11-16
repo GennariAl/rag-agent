@@ -1,0 +1,29 @@
+orchestrator_system: |
+  
+
+conversation_user: |
+  <prior_conversation>
+  {history}
+  </prior_conversation>
+
+  <latest_message>
+  {question}
+  </latest_message>
+
+rephrase_system: |
+  
+
+judge_system: |
+  
+
+judge_user: |
+  
+
+chat_system: |
+  
+
+out_of_scope_message: |
+  
+
+error_message: |
+  Sorry, something went wrong while processing your request. Please try again.
