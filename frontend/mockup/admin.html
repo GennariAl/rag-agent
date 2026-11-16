@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Evaluation · Knowledge Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-admin">
+    <header class="app-header" id="app-header"></header>
+
+    <main class="admin">
+      <div class="admin-head">
+        <h1>Evaluation</h1>
+        <p class="muted">Run a testbook of questions against the agent and review the verdict for each answer.</p>
+        <div class="notice">ℹ️ Hypothetical screen: <code>EvaluationService</code> exists in the backend but is not exposed by any route yet. Everything here is mocked.</div>
+      </div>
+
+      <section class="card">
+        <h2>1 · Testbook</h2>
+        <p class="muted">CSV with a <code>question</code> column (optional <code>expected_answer</code>).</p>
+        <div class="dropzone" id="dropzone">
+          <input type="file" id="csv-input" accept=".csv,text/csv" hidden />
+          <div>📁 Drop a CSV here or <button class="link-btn" id="browse-btn" type="button">browse</button></div>
+          <div class="muted small">or <button class="link-btn" id="sample-btn" type="button">use the sample testbook</button></div>
+        </div>
+        <div class="file-info" id="file-info" hidden></div>
+      </section>
+
+      <section class="card">
+        <h2>2 · Run</h2>
+        <div class="run-row">
+          <button class="btn btn-primary" id="run-btn" disabled>▶ Run evaluation</button>
+          <button class="btn" id="cancel-btn" hidden>Cancel</button>
+          <div class="progress" id="progress" hidden>
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+            <span class="small" id="progress-label"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="results-head">
+          <h2>3 · Results</h2>
+          <div class="summary" id="summary"></div>
+          <button class="btn" id="download-btn" disabled>⬇ Download enriched CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table class="results">
+            <thead>
+              <tr><th>#</th><th>Question</th><th>Answer</th><th>Verdict</th></tr>
+            </thead>
+            <tbody id="results-body">
+              <tr><td colspan="4" class="muted center">No results yet — load a testbook and run it.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="mock-data.js"></script>
+    <script src="mock-api.js"></script>
+    <script src="shell.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

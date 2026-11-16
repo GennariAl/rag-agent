@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Knowledge Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-chat">
+    <header class="app-header" id="app-header"></header>
+
+    <div class="app-body">
+      <aside class="sidebar" id="sidebar" aria-label="Chat history">
+        <button class="btn btn-primary new-chat" id="new-chat-btn">＋ New chat</button>
+        <div class="sidebar-section">Recent chats</div>
+        <ul class="history" id="history"></ul>
+      </aside>
+
+      <main class="chat">
+        <div class="chat-scroll" id="chat-scroll">
+          <div class="messages" id="messages" aria-live="polite"></div>
+        </div>
+
+        <form class="composer" id="composer">
+          <div class="composer-box">
+            <textarea id="composer-input" rows="1" placeholder="Ask a question about the documentation…" aria-label="Message"></textarea>
+            <button type="submit" class="btn btn-primary send" id="send-btn" title="Send (Enter)">Send ➤</button>
+            <button type="button" class="btn btn-stop" id="stop-btn" title="Stop generating" hidden>■ Stop</button>
+          </div>
+          <p class="disclaimer">AI can make mistakes — check the sources. Press Enter to send, Shift+Enter for a new line.</p>
+        </form>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="feedback-modal" hidden>
+      <form class="modal" id="feedback-form" role="dialog" aria-modal="true" aria-labelledby="feedback-title">
+        <h2 id="feedback-title">What went wrong?</h2>
+        <p class="muted">Your comment helps us improve the answers. It is optional.</p>
+        <textarea id="feedback-comment" rows="4" maxlength="1000" placeholder="e.g. The answer is outdated, the source is wrong…"></textarea>
+        <div class="modal-actions">
+          <button type="button" class="btn" id="feedback-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="mock-data.js"></script>
+    <script src="mock-api.js"></script>
+    <script src="shell.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
